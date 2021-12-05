@@ -119,7 +119,7 @@ public class SectionAcceptanceTest extends AcceptanceTest {
         ExtractableResponse<Response> response = SectionTestHelper.구간_제거_요청(params);
 
         //then
-        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+        구간_제거됨(response);
     }
 
     @DisplayName("구간이 하나 일땐 제거 안됨")
@@ -131,7 +131,15 @@ public class SectionAcceptanceTest extends AcceptanceTest {
         ExtractableResponse<Response> response = SectionTestHelper.구간_제거_요청(params);
 
         //then
+        구간_제거되지_않음(response);
+    }
+
+    private void 구간_제거되지_않음(ExtractableResponse<Response> response) {
         assertThat(response.statusCode()).isEqualTo(HttpStatus.BAD_REQUEST.value());
+    }
+
+    private void 구간_제거됨(ExtractableResponse<Response> response) {
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.NO_CONTENT.value());
     }
 
     private void 지하철_노선에_지하철역_등록됨(ExtractableResponse<Response> response) {

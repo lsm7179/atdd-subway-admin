@@ -175,3 +175,7 @@ host: localhost:52165
   * [x] 상행 또는 하행역이 포함된 구간을 제거하는 경우
   * [x] 찾은 Section에 upStation, downStation, distance를 하나로 합친다.
   * [x] 구간이 하나일때는 제거 할 수 없다
+
+### 피드백 공부 내용 정리
+* HttpStatus.NO_CONTENT -> 처리는 성공했지만 돌려줄 리소스가 없을때 사용된다.
+* 메서드 명은 동사구로 시작하는게 좋다. 참고: https://tecoble.techcourse.co.kr/post/2020-04-26-Method-Naming/

@@ -73,7 +73,7 @@ public class Sections {
     }
 
     public void removeSection(Station targetStation) {
-        validSize();
+        validateSize();
         Optional<Section> upSection = sectionGroup.stream()
                 .filter(section -> section.equalsUpStation(targetStation))
                 .findFirst();
@@ -88,7 +88,7 @@ public class Sections {
         removeSection(upSection, downSection);
     }
 
-    private void validSize() {
+    private void validateSize() {
         if (size() <= MINIMUM_SIZE) {
             throw new IllegalArgumentException("하나 이상 구간일때만 제거 할 수 있습니다.");
         }
